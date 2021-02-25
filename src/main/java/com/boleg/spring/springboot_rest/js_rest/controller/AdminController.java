@@ -35,7 +35,7 @@ public class AdminController {
         model.addAttribute("user", user);
         model.addAttribute("userRoles", user.getRoles());
         model.addAttribute("newUser", new User());
-        return "users";
+        return "app";
     }
 
     @PostMapping("/users")

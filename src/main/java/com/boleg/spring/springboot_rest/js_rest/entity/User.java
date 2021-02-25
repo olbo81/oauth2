@@ -1,5 +1,6 @@
 package com.boleg.spring.springboot_rest.js_rest.entity;
 
+import com.boleg.spring.springboot_rest.js_rest.dto.UserDto;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -54,6 +55,16 @@ public class User implements UserDetails {
         this.password = password;
         this.roles = roles;
     }
+
+    public User(UserDto userDto) {
+        this.name = userDto.getName();
+        this.surname = userDto.getSurname();
+        this.phone = userDto.getPhone();
+        this.email = userDto.getEmail();
+        this.password = userDto.getPassword();
+    }
+
+
 
     public Long getId() {
         return id;
