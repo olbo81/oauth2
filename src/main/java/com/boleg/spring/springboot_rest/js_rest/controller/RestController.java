@@ -79,6 +79,7 @@ public class RestController {
         }
         User user = new User(userDto);
         user.setRoles(rolesSet);
+        user.setId(id);
         userService.updateUser(user);
         User updatedUser = userService.getUserById(id);
         return new ResponseEntity<>(updatedUser, HttpStatus.OK);

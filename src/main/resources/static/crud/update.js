@@ -44,7 +44,7 @@ $(document).ready(function () {
     function getUserDataFromForm() {
         const form = document.getElementById("edit-user-form");
         console.log(form);
-        const {name, surname, phone, email, password, userRoles} = form;
+        const {id, name, surname, phone, email, password, userRoles} = form;
 
         let rolesArr = [];
 
@@ -55,6 +55,7 @@ $(document).ready(function () {
         }
 
         let userData = {
+            id: id.value,
             name: name.value,
             surname: surname.value,
             phone: phone.value,

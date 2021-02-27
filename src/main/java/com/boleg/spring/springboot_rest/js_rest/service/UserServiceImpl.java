@@ -46,13 +46,13 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 
     @Override
     public void updateUser(User user) {
-        if (user.getId() == null) {
-            try {
-                throw new Exception("User not have ID!");
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
+//        if (user.getId() == null) {
+//            try {
+//                throw new Exception("User not have ID!");
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
+//        }
         User oldUser = getUserById(user.getId());
         if (user.getPassword().equals("") || user.getPassword() == null) {
             user.setPassword(oldUser.getPassword());
