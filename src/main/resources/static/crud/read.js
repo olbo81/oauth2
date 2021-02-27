@@ -64,7 +64,9 @@ function showAdminPanel() {
                             <tr>
                                 <th>ID</th>
                                 <th>Name</th>
-                                <th>Age</th>
+                                <th>Surname</th>
+                                <th>Phone</th>
+                                <th>Email</th>
                                 <th>Roles</th>
                                 <th>Edit</th>
                                 <th>Delete</th>
@@ -118,7 +120,9 @@ function readUsers() {
                         <tr>
                             <td data-id>${user.id}</td>
                             <td>${user.name}</td>
-                            <td>${user.age}</td>
+                            <td>${user.surname}</td>
+                            <td>${user.phone}</td>
+                            <td>${user.email}</td>
                             <td>
                                 <div>
                                     <span class="text-uppercase">${rolesList}</span>

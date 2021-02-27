@@ -2,6 +2,9 @@ let allRolesArr = [];
 
 jQuery(function ($) {
 	let app_html = `
+		<div id='navbar-content'></div>
+		
+		<div id='page-content'></div>
 						`;
 	navbarFilling();
 	getAllRolesList();
@@ -12,9 +15,9 @@ function navbarFilling() {
 	$.getJSON("/api/user", function (data) {
 		let roles = [];
 		for (let i = 0; i < data.roles.length; i++) {
-			roles.push(data.roles[i].role)
+			roles.push(data.roles[i].role.substring(5))
 		}
-		let rolesList = roles.join(', ');
+		let rolesList = roles.join(" ");
 		let navbar_html = `
 			<nav class="navbar navbar-expand-lg navbar-dark bg-dark d-flex justify-content-between">
                     <span>

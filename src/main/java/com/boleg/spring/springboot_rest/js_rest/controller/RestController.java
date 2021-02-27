@@ -70,7 +70,7 @@ public class RestController {
         return new ResponseEntity<>(userService.findByEmail(user.getEmail()), HttpStatus.CREATED);
     }
 
-    @PostMapping("/users/{userId}")
+    @PutMapping("/admin/users/{userId}")
     public ResponseEntity<User> updateUser(@PathVariable("userId") Long id,
                                            @RequestBody UserDto userDto) {
         Set<Role> rolesSet = new HashSet<>();

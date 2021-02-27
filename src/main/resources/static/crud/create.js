@@ -51,30 +51,10 @@ function insertNewUserTab_html() {
                                                name="email"
                                                class="form-control bg-warning required"
                                                id="email"
-                                               placeholder="Email, use pattern user@domain.com required"
+                                               placeholder="Email, use pattern user@domain.com"
                                                minlength="5">
                                     </div>
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    <div class="form-group">
-                                        <label class="font-weight-bold required" for="age">Age</label>
-                                        <input type="text"
-                                               name="age"
-                                               class="form-control bg-warning"
-                                               id="age"
-                                               placeholder="Age">
-                                    </div>
-                
                                     <div class="form-group">
                                         <label class="font-weight-bold" for="password">Password</label>
                                         <input type="password"
@@ -83,10 +63,11 @@ function insertNewUserTab_html() {
                                                id="password"
                                                placeholder="Password">
                                     </div>
-                
+                                    
+                                    
                                     <div class="form-group">
                                         <label class="font-weight-bold" for="roles">Roles</label>
-                                        <select multiple size="2" class="form-control required" id="roles"
+                                        <select multiple size="3" class="form-control required" id="roles"
                                                 name="rolesNames">
                                         </select>
                                     </div>
@@ -118,7 +99,7 @@ function insertNewUserTab_html() {
     const getUserDataFromForm = () => {
         const form = document.getElementById("add-new-user-form");
 
-        const {name, age, password, roles} = form;
+        const {name, surname, phone, email, password, roles} = form;
 
         let rolesArr = [];
 
@@ -130,7 +111,9 @@ function insertNewUserTab_html() {
 
         let userData = {
             name: name.value,
-            age: age.value,
+            surname: surname.value,
+            phone: phone.value,
+            email: email.value,
             password: password.value,
             rolesNames: rolesArr
         };
@@ -164,7 +147,7 @@ function insertNewUserTab_html() {
         });
     };
 //  Получение данных формы ============================== конец
-    createUserButton.addEventListener('click', toJson);
+// !!!!!!!!!!!----------!!!!!!!!!!!!!!!!! createUserButton.addEventListener('click', toJson); ЗАКОММЕНТИРОВАЛ 1
 };
 
 // Получение списка ролей и добавление их в форму для нового юзера ================ начало

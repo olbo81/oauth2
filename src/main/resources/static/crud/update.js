@@ -10,7 +10,9 @@ $(document).ready(function () {
 
             $('#showId').val(user.id);
             $('#editName').val(user.name);
-            $('#editAge').val(user.age);
+            $('#editSurname').val(user.surname);
+            $('#editPhone').val(user.phone);
+            $('#editEmail').val(user.email);
             $('#editPassword').val(user.password);
             $('#editLabel').text('Edit ' + user.id);
 
@@ -42,7 +44,7 @@ $(document).ready(function () {
     function getUserDataFromForm() {
         const form = document.getElementById("edit-user-form");
         console.log(form);
-        const {name, age, password, userRoles} = form;
+        const {name, surname, phone, email, password, userRoles} = form;
 
         let rolesArr = [];
 
@@ -54,7 +56,9 @@ $(document).ready(function () {
 
         let userData = {
             name: name.value,
-            age: age.value,
+            surname: surname.value,
+            phone: phone.value,
+            email: email.value,
             password: password.value,
             rolesNames: rolesArr
         };
@@ -116,6 +120,7 @@ function insertUpdate_html(userId) {
                         <form id="edit-user-form" th:action="@{/admin/users/{userId}}"
                               th:method="post"
                               th:id="${'EditForm' + userId}">
+                              
                             <div class="form-group">
                                 <label class="font-weight-bold"
                                        for="showId">ID</label>
@@ -126,6 +131,7 @@ function insertUpdate_html(userId) {
                                        th:value="${userId}"
                                        readonly>
                             </div>
+                            
                             <div class="form-group">
                                 <label class="font-weight-bold"
                                        for="editName">Name</label>
@@ -136,15 +142,41 @@ function insertUpdate_html(userId) {
                                        th:value="${'user.name'}"
                                        required>
                             </div>
+                            
                             <div class="form-group">
                                 <label class="font-weight-bold"
-                                       for="editAge">Age</label>
+                                       for="editSurname">Surname</label>
                                 <input type="text"
-                                       name="age"
-                                       id="editAge"
+                                       name="surname"
+                                       id="editSurname"
                                        class="form-control"
-                                       th:value="${'user.age'}">
+                                       th:value="${'user.surname'}"
+                                       required>
                             </div>
+                            
+                            <div class="form-group">
+                                <label class="font-weight-bold"
+                                       for="editPhone">Phone</label>
+                                <input type="text"
+                                       name="phone"
+                                       id="editPhone"
+                                       class="form-control"
+                                       th:value="${'user.phone'}"
+                                       required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="font-weight-bold"
+                                       for="editEmail">Email</label>
+                                <input type="email"
+                                       name="email"
+                                       id="editEmail"
+                                       class="form-control"
+                                       th:value="${'user.email'}"
+                                       minlength="5"
+                                       required>
+                            </div>  
+ 
                             <div class="form-group">
                                 <label class="font-weight-bold"
                                        for="editPassword">Password</label>
@@ -155,16 +187,18 @@ function insertUpdate_html(userId) {
                                        value=""
                                 placeholder="New password" required>
                             </div>
+                            
                             <div class="form-group">
                                 <label class="font-weight-bold"
                                        for="editRoles">Roles</label>
-                                <select multiple size="2" class="form-control"  id="editRoles"
+                                <select multiple size="3" class="form-control"  id="editRoles"
                                         name="userRoles" required>
                                     <option>
                                     
                                     </option>
                                 </select>
                             </div>
+                            
                         </form>
                     </div>
                     <div class="col-sm-3"></div>
