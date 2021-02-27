@@ -168,7 +168,5 @@ function getRolesList() {
         }
         console.log(options_html);
         $("#roles").append(options_html);
-        // $("#roles").prop("required", true);
-
     });
 }

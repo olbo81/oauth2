@@ -13,8 +13,9 @@ $(document).ready(function () {
             $('#editSurname').val(user.surname);
             $('#editPhone').val(user.phone);
             $('#editEmail').val(user.email);
-            $('#editPassword').val(user.password);
-            $('#editLabel').text('Edit ' + user.id);
+            // $('#editPassword').val(user.password);
+            $('#editPassword').val("");
+            $('#editLabel').text('Edit ' + user.email);
 
             let options_html = "";
 
@@ -34,8 +35,6 @@ $(document).ready(function () {
             }
             $("#editRoles").empty().append(options_html);
         });
-        // let userData = getUserDataFromForm();
-        // console.log(userData + ' Юзер из формы');
     });
 
     const updateUserButton = document.getElementById("button-update-user");
@@ -186,7 +185,7 @@ function insertUpdate_html(userId) {
                                        name="password"
                                        id="editPassword"
                                        value=""
-                                placeholder="New password" required>
+                                       placeholder="New password">
                             </div>
                             
                             <div class="form-group">

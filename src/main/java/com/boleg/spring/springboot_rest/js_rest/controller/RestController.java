@@ -61,7 +61,7 @@ public class RestController {
     @PostMapping("/admin/users")
     public ResponseEntity<User> createUser(@RequestBody UserDto userDto) {
         Set<Role> roleSet = new HashSet<>();
-        for(String roleName : userDto.getRolesNames()) {
+        for (String roleName : userDto.getRolesNames()) {
             roleSet.add(roleService.getByRoleName(roleName));
         }
         User user = new User(userDto);
@@ -74,7 +74,7 @@ public class RestController {
     public ResponseEntity<User> updateUser(@PathVariable("userId") Long id,
                                            @RequestBody UserDto userDto) {
         Set<Role> rolesSet = new HashSet<>();
-        for(String roleName : userDto.getRolesNames()) {
+        for (String roleName : userDto.getRolesNames()) {
             rolesSet.add(roleService.getByRoleName(roleName));
         }
         User user = new User(userDto);

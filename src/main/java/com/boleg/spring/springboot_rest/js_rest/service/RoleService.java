@@ -1,7 +1,6 @@
 package com.boleg.spring.springboot_rest.js_rest.service;
 
 
-
 import com.boleg.spring.springboot_rest.js_rest.entity.Role;
 
 import java.util.List;

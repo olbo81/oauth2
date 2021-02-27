@@ -3,11 +3,6 @@ $(document).ready(function () {
 
     console.log('Start read.js =============')
     showAdminPanel();
-
-    // Ручной вызов функции readUsers() с помощью нажатия кнопки Users (полезна на стадии отладки) / потом можно удалить
-    // $(document).on('click', '.read-users-button', function () {
-    //     readUsers();
-    // });
 });
 
 //============================================================================
@@ -17,10 +12,7 @@ function showAdminPanel() {
     let admin_panel_html = `
 <!--container for the whole page excluding navbar start-->
 <div class="container-fluid">
-    <!-- кнопка для показа всех Users (полезна на стадии отладки) ================= потом можно удалить -->
-<!--    <div id='read-users' class='btn btn-primary pull-right m-b-15px read-users-button'>-->
-<!--        <span class='glyphicon glyphicon-list'></span> Users-->
-<!--    </div>-->
+ 
     <!--row for both panels (left/right) start-->
     <div class="row">
         <!--container for the_left_side_panel_(vertical_menu) start-->

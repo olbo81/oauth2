@@ -29,8 +29,6 @@ $(document).ready(function () {
             }
             $("#deleteRoles").empty().append(options_html);
         });
-        // let userData = getUserDataFromForm();
-        // console.log(userData + ' Юзер из формы');
     });
 
     const deleteUserButton = document.getElementById("button-delete-user");
