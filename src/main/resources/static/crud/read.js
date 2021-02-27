@@ -111,9 +111,9 @@ function readUsers() {
         $.each(data, function (key, user) {
             let rolesArr = [];
             for (let i = 0; i < user.roles.length; i++) {
-                rolesArr.push(user.roles[i].role);
+                rolesArr.push(user.roles[i].role.substring(5));
             }
-            let rolesList = rolesArr.join(', ');
+            let rolesList = rolesArr.join(" ");
 
             // создание новой строки таблицы для каждой записи (для каждого юзера)
             users_html += `

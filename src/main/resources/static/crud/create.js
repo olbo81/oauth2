@@ -22,53 +22,59 @@ function insertNewUserTab_html() {
                                         <label class="font-weight-bold" for="name">Name</label>
                                         <input type="text"
                                                name="name"
-                                               class="form-control bg-warning required"
+                                               class="form-control bg-warning"
                                                id="name"
-                                               placeholder="Name">
+                                               placeholder="Name"
+                                               required>
                                     </div>
                                     
                                     <div class="form-group">
                                         <label class="font-weight-bold" for="surname">Surname</label>
                                         <input type="text"
                                                name="surname"
-                                               class="form-control bg-warning required"
+                                               class="form-control bg-warning"
                                                id="surname"
-                                               placeholder="Surname">                                         
+                                               placeholder="Surname"
+                                               required>                                         
                                     </div>
                                     
                                     <div class="form-group">
                                         <label class="font-weight-bold" for="phone">Phone</label>
                                         <input type="text"
                                                name="phone"
-                                               class="form-control bg-warning required"
+                                               class="form-control bg-warning"
                                                id="phone"
-                                               placeholder="Phone">
+                                               placeholder="Phone"
+                                               required>
                                     </div>
                                     
                                     <div class="form-group">
                                         <label class="font-weight-bold" for="email">Email</label>
                                         <input type="email"
                                                name="email"
-                                               class="form-control bg-warning required"
+                                               class="form-control bg-warning"
                                                id="email"
                                                placeholder="Email, use pattern user@domain.com"
-                                               minlength="5">
+                                               minlength="5"
+                                               required>
                                     </div>
                                     
                                     <div class="form-group">
                                         <label class="font-weight-bold" for="password">Password</label>
                                         <input type="password"
-                                               class="form-control required"
+                                               class="form-control"
                                                name="password"
                                                id="password"
-                                               placeholder="Password">
+                                               placeholder="Password"
+                                               required>
                                     </div>
                                     
                                     
                                     <div class="form-group">
                                         <label class="font-weight-bold" for="roles">Roles</label>
-                                        <select multiple size="3" class="form-control required" id="roles"
-                                                name="rolesNames">
+                                        <select multiple size="3" class="form-control" id="roles"
+                                                name="rolesNames"
+                                                required>
                                         </select>
                                     </div>
                                     <div class="form-group">
@@ -147,7 +153,7 @@ function insertNewUserTab_html() {
         });
     };
 //  Получение данных формы ============================== конец
-// !!!!!!!!!!!----------!!!!!!!!!!!!!!!!! createUserButton.addEventListener('click', toJson); ЗАКОММЕНТИРОВАЛ 1
+createUserButton.addEventListener('click', toJson);
 };
 
 // Получение списка ролей и добавление их в форму для нового юзера ================ начало
