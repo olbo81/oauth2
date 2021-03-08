@@ -36,6 +36,10 @@ public class User implements UserDetails {
     @Column(name = "password")
     private String password;
 
+//    @Enumerated(EnumType.STRING)
+//    @Column(name = "auth_provider")
+//    private AuthenticationProvider authProvider;
+
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "user_roles",
@@ -174,5 +178,13 @@ public class User implements UserDetails {
     public int hashCode() {
         return Objects.hash(id, name, surname, phone, email, password, roles);
     }
+
+//    public AuthenticationProvider getAuthenticationProvider() {
+//        return authProvider;
+//    }
+//
+//    public void setAuthenticationProvider(AuthenticationProvider authenticationProvider) {
+//        this.authProvider = authenticationProvider;
+//    }
 }
 

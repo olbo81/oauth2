@@ -4,12 +4,15 @@ package com.boleg.spring.springboot_rest.js_rest.controller;
 import com.boleg.spring.springboot_rest.js_rest.dto.UserDto;
 import com.boleg.spring.springboot_rest.js_rest.entity.Role;
 import com.boleg.spring.springboot_rest.js_rest.entity.User;
+import com.boleg.spring.springboot_rest.js_rest.security.CustomOAuth2User;
 import com.boleg.spring.springboot_rest.js_rest.service.RoleService;
 import com.boleg.spring.springboot_rest.js_rest.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashSet;
@@ -25,10 +28,21 @@ public class RestController {
 
 
     @Autowired
-    public RestController(UserService userService, RoleService roleService) {
+    public RestController(UserService userService, RoleService roleService, PasswordEncoder passwordEncoder) {
         this.userService = userService;
         this.roleService = roleService;
     }
+
+
+//    //Для тестирования того, кто приходит
+//    @RequestMapping(value = "/usergoogle")
+//    public User user (Authentication authentication) {
+//        CustomOAuth2User principal = (CustomOAuth2User) authentication.getPrincipal();
+//        String email = (String) principal.getAttributes().get("email");
+//        String
+//        System.out.println(email);
+//        return user;
+//    }
 
     @GetMapping("/admin/users")
     public ResponseEntity<List<User>> getAllUsers() {

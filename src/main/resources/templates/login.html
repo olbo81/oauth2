@@ -13,9 +13,12 @@
 </head>
 <body>
 <div class="container-fluid"><br><br>
-    <div class="col-4 offset-4">
+    <div class="col-4 offset-4 text-center">
         <form class="form-signing" action="/login" method="post">
-            <h2 class="form-signing-head">Please sign in</h2>
+            <h2 class="form-signing-head">Please sign in OR </h2>
+            <div>
+                <h4><a th:href="@{/oauth2/authorization/google}">Login in with Google</a></h4>
+            </div>
             <p>
                 <label for="name" class="sr-only">Name</label>
                 <input type="text" id="name" name="j_username" class="form-control" placeholder="Name" required autofocus>
