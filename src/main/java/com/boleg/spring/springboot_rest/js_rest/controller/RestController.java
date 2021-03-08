@@ -61,16 +61,28 @@ public class RestController {
     }
 
     @GetMapping("/user")
-    public User getUser(@AuthenticationPrincipal User user) {
-        return user;
+    public ResponseEntity<User> getUser(@AuthenticationPrincipal User user) {
+        return new ResponseEntity<>(user, HttpStatus.OK);
     }
 
     @GetMapping("/users/new")
-    public User newUser() {
+    public ResponseEntity<User> newUser() {
         User blankUser = new User();
         blankUser.setRoles(new HashSet<>(roleService.getAllRoles()));
-        return blankUser;
+        return new ResponseEntity<>(blankUser, HttpStatus.OK);
     }
+
+//    @GetMapping("/user")
+//    public User getUser(@AuthenticationPrincipal User user) {
+//        return user;
+//    }
+//
+//    @GetMapping("/users/new")
+//    public User newUser() {
+//        User blankUser = new User();
+//        blankUser.setRoles(new HashSet<>(roleService.getAllRoles()));
+//        return blankUser;
+//    }
 
     @PostMapping("/admin/users")
     public ResponseEntity<User> createUser(@RequestBody UserDto userDto) {
